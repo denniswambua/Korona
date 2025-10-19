@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0e8gg0qxrc5f"]
+
+[ext_resource type="Script" uid="uid://bhyw0bdjpjcre" path="res://scripts/mainmenu.gd" id="1_gmv32"]
+[ext_resource type="Shader" uid="uid://ddol7vkh2r7k0" path="res://assets/scrolling.gdshader" id="2_45mqy"]
+[ext_resource type="Texture2D" uid="uid://cgt77qw4mnr4n" path="res://assets/scoll.png" id="2_n47lj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krtfg"]
+shader = ExtResource("2_45mqy")
+shader_parameter/speed = 0.3
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_gmv32")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+self_modulate = Color(0.27752772, 0.27752772, 0.27752772, 1)
+material = SubResource("ShaderMaterial_krtfg")
+layout_mode = 2
+texture = ExtResource("2_n47lj")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=green]
+[b]Korona[/b]
+[/color]
+Survive the pandemic.
+[tornado]
+Mask up!
+[/tornado]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,62 @@
+[gd_resource type="BehaviorTree" load_steps=17 format=3 uid="uid://dswnpfklvu6r6"]
+
+[ext_resource type="Script" uid="uid://bbrww14oj5qg0" path="res://ai/tasks/select_random_nearby_pos.gd" id="1_c4tfo"]
+[ext_resource type="Script" uid="uid://c44mlv4xsmigi" path="res://ai/tasks/arrive_pos.gd" id="2_n4vyq"]
+[ext_resource type="Script" uid="uid://c25lpdbkxdr3o" path="res://ai/tasks/find_in_group.gd" id="2_vrwcy"]
+[ext_resource type="Script" uid="uid://x2s54firb8o4" path="res://ai/tasks/pursue.gd" id="4_eqp4c"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_tumo7"]
+var/infected/name = &"infected"
+var/infected/type = 1
+var/infected/value = false
+var/infected/hint = 0
+var/infected/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_m22na"]
+script = ExtResource("1_c4tfo")
+range_min = 100.0
+
+[sub_resource type="BTAction" id="BTAction_c7nso"]
+script = ExtResource("2_n4vyq")
+tolerance = 100.0
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_y1huo"]
+min_duration = 0.7
+max_duration = 1.2
+
+[sub_resource type="BTSequence" id="BTSequence_y1huo"]
+custom_name = "RandomWalk"
+children = [SubResource("BTAction_m22na"), SubResource("BTAction_c7nso"), SubResource("BTRandomWait_y1huo")]
+
+[sub_resource type="BTProbability" id="BTProbability_c4tfo"]
+run_chance = 0.2
+children = [SubResource("BTSequence_y1huo")]
+_enabled = false
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_eqp4c"]
+min_duration = 0.7
+max_duration = 1.2
+
+[sub_resource type="BTAction" id="BTAction_c4tfo"]
+script = ExtResource("2_vrwcy")
+group = &"player"
+
+[sub_resource type="BTAction" id="BTAction_n4vyq"]
+script = ExtResource("4_eqp4c")
+approach_distance = 5.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_4xdsy"]
+time_limit = 2.0
+children = [SubResource("BTAction_n4vyq")]
+
+[sub_resource type="BTSequence" id="BTSequence_n4vyq"]
+custom_name = "Pursue"
+children = [SubResource("BTRandomWait_eqp4c"), SubResource("BTAction_c4tfo"), SubResource("BTTimeLimit_4xdsy")]
+
+[sub_resource type="BTSelector" id="BTSelector_eqp4c"]
+custom_name = "Main"
+children = [SubResource("BTProbability_c4tfo"), SubResource("BTSequence_n4vyq")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_tumo7")
+root_task = SubResource("BTSelector_eqp4c")

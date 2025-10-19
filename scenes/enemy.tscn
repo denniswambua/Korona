@@ -1,0 +1,467 @@
+[gd_scene load_steps=72 format=3 uid="uid://liuf84kgil7a"]
+
+[ext_resource type="Script" uid="uid://1003cn3gf4bv" path="res://scripts/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://b8277ledmvqan" path="res://icon.svg" id="1_7k104"]
+[ext_resource type="BehaviorTree" uid="uid://dswnpfklvu6r6" path="res://ai/tree/default_enemy.tres" id="3_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://bm8lltn7lmyg3" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0105.png" id="4_g0wcc"]
+[ext_resource type="Texture2D" uid="uid://mrp7dtb5dgph" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0132.png" id="5_s1ycm"]
+[ext_resource type="Texture2D" uid="uid://btg53fu17waco" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0159.png" id="6_shcg2"]
+[ext_resource type="Texture2D" uid="uid://ddfxag7gjwe7l" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0104.png" id="7_ile5s"]
+[ext_resource type="Texture2D" uid="uid://msq62h5xo25m" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0131.png" id="8_1x4g4"]
+[ext_resource type="Texture2D" uid="uid://dyxljo25mnmq7" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0158.png" id="9_2pwtc"]
+[ext_resource type="Texture2D" uid="uid://c7q7i6emionbl" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0107.png" id="10_rogs8"]
+[ext_resource type="Texture2D" uid="uid://ccvphu6uc72va" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0134.png" id="11_wrm80"]
+[ext_resource type="Texture2D" uid="uid://bwa6dbr6ob1tl" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0161.png" id="12_6awcb"]
+[ext_resource type="Texture2D" uid="uid://bgb1vgerl0r6a" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0106.png" id="13_wjec0"]
+[ext_resource type="Texture2D" uid="uid://cbf8wcrshujd7" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0133.png" id="14_i4rgx"]
+[ext_resource type="Texture2D" uid="uid://b51t5w5imx7fx" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0160.png" id="15_2mchx"]
+[ext_resource type="Texture2D" uid="uid://b2s263w4en7m3" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0186.png" id="16_t3vcr"]
+[ext_resource type="Texture2D" uid="uid://s1hsnw6s5ayd" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0213.png" id="17_qaulx"]
+[ext_resource type="Texture2D" uid="uid://bkn2hwvatrpnp" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0240.png" id="18_1f82d"]
+[ext_resource type="Texture2D" uid="uid://d1djv3ku8ci04" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0185.png" id="19_lioqc"]
+[ext_resource type="Texture2D" uid="uid://bgdqcgn3lpfdj" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0212.png" id="20_0lg75"]
+[ext_resource type="Texture2D" uid="uid://bg2t5o4aqwd62" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0239.png" id="21_lsnsy"]
+[ext_resource type="Texture2D" uid="uid://kpvxy04e2nrm" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0188.png" id="22_thsr5"]
+[ext_resource type="Texture2D" uid="uid://cqeusw4o215fh" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0215.png" id="23_ekh6n"]
+[ext_resource type="Texture2D" uid="uid://beuvgrpkocr45" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0242.png" id="24_2sbpf"]
+[ext_resource type="Texture2D" uid="uid://bl2enpwp0ub1d" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0187.png" id="25_78kod"]
+[ext_resource type="Texture2D" uid="uid://7l05tdp67jv2" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0214.png" id="26_605iw"]
+[ext_resource type="Texture2D" uid="uid://bafoxsw0ve4ii" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0241.png" id="27_x6q4o"]
+[ext_resource type="Texture2D" uid="uid://bjyl7wnyw26v2" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0267.png" id="28_2tuss"]
+[ext_resource type="Texture2D" uid="uid://omrwm38dcl43" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0294.png" id="29_7v6cf"]
+[ext_resource type="Texture2D" uid="uid://dx37asobe1in" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0321.png" id="30_vab5u"]
+[ext_resource type="Texture2D" uid="uid://cb6g11svbxmyp" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0266.png" id="31_qiusc"]
+[ext_resource type="Texture2D" uid="uid://dg4d8cn1qck18" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0293.png" id="32_5ie7m"]
+[ext_resource type="Texture2D" uid="uid://d2d878ic4oudl" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0320.png" id="33_ya47j"]
+[ext_resource type="Texture2D" uid="uid://dj3iiv1783a21" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0269.png" id="34_hyejq"]
+[ext_resource type="Texture2D" uid="uid://e8rxjbhurbjw" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0296.png" id="35_j0dkt"]
+[ext_resource type="Texture2D" uid="uid://c3na71hmg27yr" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0323.png" id="36_sdxul"]
+[ext_resource type="Texture2D" uid="uid://cfp38vj856xh4" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0268.png" id="37_e7lhw"]
+[ext_resource type="Texture2D" uid="uid://ddxmhkedrvjf1" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0295.png" id="38_gst0f"]
+[ext_resource type="Texture2D" uid="uid://bdk6unv14ju85" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0322.png" id="39_sm4rh"]
+[ext_resource type="Texture2D" uid="uid://ch7jibjpddc5b" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0348.png" id="40_5lniq"]
+[ext_resource type="Texture2D" uid="uid://eu22ropwwk3g" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0375.png" id="41_7w3jn"]
+[ext_resource type="Texture2D" uid="uid://nkjhwd7acwxp" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0402.png" id="42_uiwvf"]
+[ext_resource type="Texture2D" uid="uid://do28nwpc47u35" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0347.png" id="43_0pw1s"]
+[ext_resource type="Texture2D" uid="uid://bo2yjiepq575e" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0374.png" id="44_b5geg"]
+[ext_resource type="Texture2D" uid="uid://77vochkpveyl" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0401.png" id="45_g0yyi"]
+[ext_resource type="Texture2D" uid="uid://bkemt5vn2oedi" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0350.png" id="46_5utat"]
+[ext_resource type="Texture2D" uid="uid://dauqwke77qr7a" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0377.png" id="47_0b4fd"]
+[ext_resource type="Texture2D" uid="uid://w5q0ald8js6p" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0404.png" id="48_13roy"]
+[ext_resource type="Texture2D" uid="uid://cg67euqypuk3j" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0349.png" id="49_a5akt"]
+[ext_resource type="Texture2D" uid="uid://ci5o1w4tlqqmc" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0376.png" id="50_4lt7r"]
+[ext_resource type="Texture2D" uid="uid://b3x1funom3ti" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0403.png" id="51_tysqt"]
+[ext_resource type="Texture2D" uid="uid://byvxv8agxhsaw" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0429.png" id="52_kbbx4"]
+[ext_resource type="Texture2D" uid="uid://depq26uvo56dp" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0456.png" id="53_x24ca"]
+[ext_resource type="Texture2D" uid="uid://crilya6w218as" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0483.png" id="54_3yi8r"]
+[ext_resource type="Texture2D" uid="uid://2qkfj8o3eaym" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0428.png" id="55_yb7ap"]
+[ext_resource type="Texture2D" uid="uid://dff847pav06wr" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0455.png" id="56_by3os"]
+[ext_resource type="Texture2D" uid="uid://d1cl662ka3mx6" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0482.png" id="57_o6r7o"]
+[ext_resource type="Texture2D" uid="uid://da6y5xcbtayra" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0431.png" id="58_ef2cb"]
+[ext_resource type="Texture2D" uid="uid://dcq8olx7m7q46" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0458.png" id="59_1lc1m"]
+[ext_resource type="Texture2D" uid="uid://cdmaesui65wp0" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0485.png" id="60_4c6tc"]
+[ext_resource type="Texture2D" uid="uid://po4visd157ms" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0430.png" id="61_ci0sa"]
+[ext_resource type="Texture2D" uid="uid://djnym82lub7q2" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0457.png" id="62_2qahx"]
+[ext_resource type="Texture2D" uid="uid://bbvks0y0eketj" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0484.png" id="63_4ceth"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
+radius = 9.0
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_md0e3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tuss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g0wcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s1ycm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_shcg2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g0wcc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ile5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1x4g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2pwtc")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_rogs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wrm80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6awcb")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_wjec0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i4rgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2mchx")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7v6cf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_t3vcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qaulx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1f82d")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_t3vcr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_lioqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0lg75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lsnsy")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_thsr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ekh6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2sbpf")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_78kod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_605iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x6q4o")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3vcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_2tuss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7v6cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_vab5u")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_2tuss")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_qiusc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5ie7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ya47j")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_hyejq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_j0dkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sdxul")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_e7lhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_gst0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sm4rh")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbbx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_5lniq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_7w3jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_uiwvf")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_5lniq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_0pw1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_b5geg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_g0yyi")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_5utat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0b4fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_13roy")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_a5akt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_4lt7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_tysqt")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lniq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_kbbx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_x24ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_3yi8r")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_kbbx4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_yb7ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_by3os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_o6r7o")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_ef2cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_1lc1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_4c6tc")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_ci0sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_2qahx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_4ceth")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kbbx4"]
+radius = 9.0
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.42352942, 0.9764706, 0.28627452, 1)
+position = Vector2(-0.6249999, -1.0000001)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7k104")
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("3_4ra3w")
+blackboard_plan = SubResource("BlackboardPlan_md0e3")
+
+[node name="visual_0" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2tuss")
+animation = &"idle"
+
+[node name="visual_1" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_7v6cf")
+animation = &"idle"
+
+[node name="visual_2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_t3vcr")
+animation = &"idle"
+
+[node name="visual_3" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_kbbx4")
+animation = &"up"
+frame_progress = 0.722202
+
+[node name="visual_4" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_5lniq")
+animation = &"down"
+frame_progress = 0.114392415
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+
+[node name="InfectionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Collider" type="CollisionShape2D" parent="InfectionArea"]
+shape = SubResource("CircleShape2D_kbbx4")
+debug_color = Color(0.885866, 0.1390003, 0.7358339, 0.41960785)
+
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="body_entered" from="InfectionArea" to="." method="_on_infection_area_body_entered"]
